@@ -1,0 +1,33 @@
+
+
+
+
+
+body {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 400;
+}
+h1,h2 {
+    font-weight: 900;
+    line-height: 1cm;
+}
+h3,h4,h5,h6 {
+    font-weight: 700;
+    line-height: 1.3cm;
+}
+p {
+    font-weight: 400;
+    line-height: 1.5cm;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+#main_menu nav {
+    background-color: bisque;
+    
+
+}
+#main_menu nav li {
+    margin-left: 15px;
+}
