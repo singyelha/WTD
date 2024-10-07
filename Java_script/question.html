@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript</title>
+</head>
+
+<body>
+    <div id="output"></div>
+    <br>Ask me any Question?
+    <br>
+    <input type="text" id="myInput"><br>
+    <button onclick="sValue()">ASK Question</button><br>
+    <button onclick="sAdd()">Add Value to Canned response</button>      
+
+    <script>
+        var myArray = ["Yes","No","Maybe","Interesting","Don't know what you mean","Say what"];
+        var myQue = ["how","what","where","why","who","when"];
+
+        function sAdd(){
+            var sValue = document.getElementById("myInput").value;
+            myArray.push(sValue);
+            console.log(myArray);
+        }
+
+        function sValue() {
+            console.log(myArray);
+            var sValue = document.getElementById("myInput").value;
+            var holderValue = myFun(sValue);
+            document.getElementById("output").innerHTML = holderValue;
+        }
+
+        function myRandom(){
+            return myArray[Math.floor(Math.random()*myArray.length)];
+        }
+
+        function myFun(a) {
+            var response;
+            var myQuestion = '';
+             for(var x in myQue ){
+                 if(a.indexOf(myQue[x]) !== -1 ){ myQuestion = myQue[x];}
+             }
+
+            if (Number(a)) {
+                a = Number(a);
+            }
+
+            console.log(typeof a);
+            if (typeof a == "number") {
+                var output = "<h1>I can count that high</h1>";
+                for (x = 0; x < a; x++) {
+                    if (a > 20) {
+                        output += "value too large!!!";
+                        break;
+                    }
+                    output += "counting... " + (x + 1) + "<br>";
+                }
+                response = output;
+            }
+            else {
+
+                switch (myQuestion) {
+                case "how" :
+                    response = "I thing you can figure out how.";
+                    break;
+                case "when":
+                    response = "When is a a good time for anything.";
+                    break;
+                case "what":
+                    response = "I don't know what that what is";
+                    break;
+               case "who":
+                    response = "I don't know that person.";
+                    break;
+               case "where":
+                    response = "Could be anywhere.";
+                    break;
+               case "why":
+                    response = "I know why but I won't tell you.";
+                    break;
+                default:
+                    response = myRandom();
+                }
+            }
+            return response;
+        }
+    </script>
+</body>
+
+</html>
+

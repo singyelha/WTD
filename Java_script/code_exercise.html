@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript</title>
+
+</head>
+
+<body>
+    <div id="output">Hello world</div>
+    
+    <button onclick="askME('what is your name');">Name</button>
+    <button onclick="askME('who are you');">Who</button>
+    <script>
+    function myou(q) {
+
+        var a = prompt(q);
+        var b = document.getElementById("output");
+        b.innerHTML = q + " your respone" + a;
+}
+    function askME(q) {
+
+        var a = prompt(q);
+        var b = document.getElementById("output");
+        b.innerHTML = q + " your respone" + a;
+    }
+    </script>
+</body>
+
+</html>
+

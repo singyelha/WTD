@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript</title>
+</head>
+
+<body>
+    <div id="output"></div>
+    <br>Please enter a Value
+    <br>
+    <input type="text" id="myInput">
+    <button onclick="sValue()">Send Value</button>
+    <script>
+        function sValue() {
+            var sValue = document.getElementById("myInput").value;
+            var holderValue = myFun(sValue);
+            document.getElementById("output").innerHTML = holderValue;
+        }
+
+        function myFun(a) {
+            var response;
+            if (Number(a)) {
+                a = Number(a);
+            }
+            console.log(typeof a);
+            if (typeof a == "number") {
+                var output = "<h1>My output</h1>";
+                for (x = 0; x < a; x++) {
+                    if (a > 20) {
+                        output += "value too large!!!";
+                        break;
+                    }
+                    output += "new value " + (x + 1) + "<br>";
+                }
+                /*
+            var x = 0;
+            do {
+               output += "new value " + (x+1) + "<br>"; 
+               x++;
+            }
+            while(x<a);
+           
+           
+            while(x<a){
+                output += "new value " + (x+1) + "<br>";
+                x++;
+            }
+
+            */
+                response = output;
+            }
+            else {
+                switch (a) {
+                case "a":
+                    response = "Canned response was A";
+                    break;
+                case "b":
+                    response = "B was my response";
+                    break;
+                case "c":
+                    response = "C was recieved and here";
+                    break;
+                default:
+                    response = "default run was not found :(";
+                }
+            }
+            return response;
+        }
+    </script>
+</body>
+
+</html>

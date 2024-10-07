@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript</title>
+</head>
+
+<body>
+    <div id="output"></div>
+    <br>Please enter a Value
+    <br>
+    <input type="text" id="myInput"><br>
+    <button onclick="sAdd()">Add Value to Canned response</button>      
+    <button onclick="sValue()">Send Value</button>
+    <script>
+        var myArray = ["hello","weird","no one","Not here","Not Available","Missing information"];
+
+        function sAdd(){
+            var sValue = document.getElementById("myInput").value;
+            myArray.push(sValue);
+            console.log(myArray);
+        }
+
+        function sValue() {
+            console.log(myArray);
+            var sValue = document.getElementById("myInput").value;
+            var holderValue = myFun(sValue);
+            document.getElementById("output").innerHTML = holderValue;
+        }
+
+        function myRandom(){
+            return myArray[Math.floor(Math.random()*myArray.length)];
+        }
+
+        function myFun(a) {
+            var response;
+            if (Number(a)) {
+                a = Number(a);
+            }
+
+            console.log(typeof a);
+            if (typeof a == "number") {
+                var output = "<h1>My output</h1>";
+                for (x = 0; x < a; x++) {
+                    if (a > 20) {
+                        output += "value too large!!!";
+                        break;
+                    }
+                    output += "new value " + (x + 1) + "<br>";
+                }
+                response = output;
+            }
+            else {
+                switch (a) {
+                case "a":
+                    response = "Canned response was A";
+                    break;
+                case "b":
+                    response = "B was my response";
+                    break;
+                case "c":
+                    response = "C was recieved and here";
+                    break;
+                default:
+                    response = myRandom();
+                }
+            }
+            return response;
+        }
+    </script>
+</body>
+
+</html>
+
