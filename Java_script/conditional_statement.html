@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Statement</title>
+</head>
+<body>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <script>
+        const hour = new Date().getHours(); 
+        let greetings;
+
+        if (hour < 10) {
+            document.getElementById('p1').innerHTML = "Good Day!";
+        }
+        if (hour >= 10 && hour < 12) {
+            greetings = "Good Morning!";
+        } else if (hour >= 12 && hour < 17) {
+            greetings = "Have a good day!";
+        } else {
+            greetings = "Good Evening!"; 
+        }
+
+        document.getElementById('p2').innerHTML = greetings;
+        console.log(hour);
+    </script>
+</body>
+</html>
