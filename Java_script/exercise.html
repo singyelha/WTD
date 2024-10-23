@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replace Paragraph</title>
+    <style>
+        .red-text {
+            color: red;
+        }
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="myDiv">
+        <h5>Exercise</h5>
+        <h5 class="heading">Remove me</h5>
+        <p id="para">Add a new paragraph and a link inside that paragraph!</p>
+    </div>
+    <button onclick="addNewParagraph()">add a paragraph</button>
+
+    <script>
+        function addNewParagraph() {
+            // Remove the h5 with the class 'heading'
+            document.getElementsByClassName("heading")[0].remove();
+
+            // Replace the paragraph content with red text and a link
+            document.getElementById("para").innerHTML = 
+                '<span class="red-text">Click on the following link to visit JNEC website: </span><a href="https://www.jnec.edu.bt" target="_blank">link</a>';
+        }
+    </script>
+</body>
+</html>
