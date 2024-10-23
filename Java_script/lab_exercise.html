@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>PROCESS SCORE</h4>
+    <button type="button" onclick="displayScores()">Click</button>
+    <div id="result"></div>
+
+    <script>
+        let student = {
+            Sonam: 76,
+            Pema: 61,
+            Sangay: 50,
+            Dechen: 55,
+            Lhaki: 92,
+            Karma: null,
+            Yuden: 81
+        };
+
+        function getScores(students) {
+            let result = [];
+
+            for (let name in students) {
+                let score = students[name];
+
+                if (score === null) {
+                    break; 
+                }
+
+                if (score < 50) {
+                    continue;  
+                }
+                result.push(`${name}: ${score}`);
+            }
+            return result;
+        }
+
+        function displayScores() {
+            let finalResult = getScores(student); 
+            document.getElementById("result").innerHTML = finalResult.join('<br>');
+        }
+    </script>
+</body>
+</html>
