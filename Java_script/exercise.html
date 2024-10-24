@@ -4,15 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Replace Paragraph</title>
-    <style>
-        .red-text {
-            color: red;
-        }
-        a {
-            color: blue;
-            text-decoration: none;
-        }
-    </style>
 </head>
 <body>
     <div id="myDiv">
@@ -30,6 +21,8 @@
             // Replace the paragraph content with red text and a link
             document.getElementById("para").innerHTML = 
                 '<span class="red-text">Click on the following link to visit JNEC website: </span><a href="https://www.jnec.edu.bt" target="_blank">link</a>';
+            document.getElementById("para").style.color = "red";
+
         }
     </script>
 </body>
